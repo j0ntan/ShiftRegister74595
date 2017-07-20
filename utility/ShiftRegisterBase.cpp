@@ -1,14 +1,17 @@
 #include <utility/ShiftRegisterBase.h>
 #include <Arduino.h>
 
-namespace ShiftReg595 {
+namespace {
+    using ShiftReg595::pin;
     void
     setPinModes(const pin& serial, const pin& storageCLK, const pin& shiftCLK) {
         pinMode(serial, OUTPUT);
         pinMode(storageCLK, OUTPUT);
         pinMode(shiftCLK, OUTPUT);
     }
-    
+}
+
+namespace ShiftReg595 {
     ShiftRegisterBase::ShiftRegisterBase(pin serial, pin storageCLK, pin shiftCLK) :
             SER_(serial), RCLK_(storageCLK), SRCLK_(shiftCLK) {
                 setPinModes(serial, storageCLK, shiftCLK);
