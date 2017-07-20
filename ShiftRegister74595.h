@@ -3,5 +3,6 @@
 
 #include <utility/ShiftRegisterBase.h>
 #include <utility/ShiftRegisterEnable.h>
+#include <utility/ShiftRegisterClear.h>
 
 #endif
