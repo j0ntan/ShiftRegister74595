@@ -1,21 +1,11 @@
 #include <utility/ShiftRegisterClear.h>
 #include <Arduino.h>
 
-namespace {
-    using ShiftReg595::pin;
-    void
-    setPinModes(const pin& serial, const pin& shiftCLK,
-            const pin& storageCLK, const pin& shiftClear) {
-        pinMode(serial, OUTPUT);
-        pinMode(shiftCLK, OUTPUT);
-        pinMode(storageCLK, OUTPUT);
-        pinMode(shiftClear, OUTPUT);
-    }
-}
-
 namespace ShiftReg595 {
     SRClear::SRClear(pin shiftRegisterClear) 
-            : SRCLR_(shiftRegisterClear) {}
+            : SRCLR_(shiftRegisterClear) {
+        pinMode(shiftRegisterClear, OUTPUT);
+    }
 
     void
     SRClear::clearShiftRegisters(milliseconds period_SRCLK) const {
@@ -33,7 +23,6 @@ namespace ShiftReg595 {
     ShiftRegisterClear::ShiftRegisterClear(pin serial, pin storageCLK,
             pin shiftCLK, pin serialClear) : SRCLR_(serialClear),
             ShiftRegisterBase(serial, storageCLK, shiftCLK) {
-        setPinModes(SER_, SRCLK_, RCLK_, SRCLR_);
         outputAllOff();
     }
     ShiftRegisterClear::~ShiftRegisterClear() {}
