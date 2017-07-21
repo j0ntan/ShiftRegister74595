@@ -14,21 +14,39 @@ namespace {
 }
 
 namespace ShiftReg595 {
+    OutputEnable::OutputEnable(pin outputEnable)
+            : OutEn_(outputEnable) {}
+
+    void
+    OutputEnable::enableOutput() const {
+        // signal is active low
+        digitalWrite(OutEn_, 0);
+    }
+    void
+    OutputEnable::disableOutput() const {
+        digitalWrite(OutEn_, 1);
+    }
+
+    OutputEnable::operator pin () const {
+        return OutEn_;
+    }
+
+
     ShiftRegisterEnable::ShiftRegisterEnable(pin serial, pin storageCLK,
             pin shiftCLK, pin outputEnable) : OutEn_(outputEnable),
             ShiftRegisterBase(serial, storageCLK, shiftCLK) {
         setPinModes(SER_, SRCLK_, RCLK_, OutEn_);
         outputAllOff();
+        enableOutput();
     }
     ShiftRegisterEnable::~ShiftRegisterEnable() {}
 
     void
     ShiftRegisterEnable::enableOutput() const {
-        // signal is active low
-        digitalWrite(OutEn_, 0);
+        OutEn_.enableOutput();
     }
     void
     ShiftRegisterEnable::disableOutput() const {
-        digitalWrite(OutEn_, 1);
+        OutEn_.disableOutput();
     }
 }

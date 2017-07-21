@@ -6,7 +6,15 @@
 namespace ShiftReg595 {
     class OutputEnable {
     public:
+        OutputEnable(pin outputEnable);
+
+        void enableOutput() const;
+        void disableOutput() const;
+
+        operator pin() const;
+
     private:
+        const pin OutEn_;
     };
 
     class ShiftRegisterEnable : public ShiftRegisterBase {
@@ -18,8 +26,8 @@ namespace ShiftReg595 {
         void enableOutput() const;
         void disableOutput() const;
 
-    protected:
-        const pin OutEn_;
+    private:
+        const OutputEnable OutEn_;
     };
 }
 #endif
