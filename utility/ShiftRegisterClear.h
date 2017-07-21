@@ -6,7 +6,14 @@
 namespace ShiftReg595 {
     class SRClear {
     public:
+        SRClear(pin shiftRegisterClear);
+
+        void clearShiftRegisters(milliseconds period_SRCLK) const;
+
+        operator pin() const;
+
     private:
+        const pin SRCLR_;
     };
 
     class ShiftRegisterClear : public ShiftRegisterBase {
@@ -15,11 +22,11 @@ namespace ShiftReg595 {
                 pin shiftCLK, pin serialClear);
         virtual ~ShiftRegisterClear();
 
-        void clearShiftRegisters();
-        void outputAllOff();
+        void clearShiftRegisters() const;
+        void outputAllOff() const;
         
-    protected:
-        const pin SRCLR_;
+    private:
+        const SRClear SRCLR_;
     };
 }
 #endif
