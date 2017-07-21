@@ -4,6 +4,11 @@
 #include <utility/ShiftRegisterBase.h>
 
 namespace ShiftReg595 {
+    class SRClear {
+    public:
+    private:
+    };
+
     class ShiftRegisterClear : public ShiftRegisterBase {
     public:
         ShiftRegisterClear(pin serial, pin storageCLK,

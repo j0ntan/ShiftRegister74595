@@ -4,6 +4,11 @@
 #include <utility/ShiftRegisterBase.h>
 
 namespace ShiftReg595 {
+    class OutputEnable {
+    public:
+    private:
+    };
+
     class ShiftRegisterEnable : public ShiftRegisterBase {
     public:
         ShiftRegisterEnable(pin serial, pin storageCLK,
