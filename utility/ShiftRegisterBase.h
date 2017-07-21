@@ -1,5 +1,5 @@
-#ifndef SHIFTREGISTER_74595_h
-#define SHIFTREGISTER_74595_h
+#ifndef SHIFTREGISTERBASE_H
+#define SHIFTREGISTERBASE_H
 
 namespace ShiftReg595 {
     typedef unsigned char pin;
@@ -9,10 +9,10 @@ namespace ShiftReg595 {
 
     enum class BIT : byte {LO=0, HI=1};
 
-    class ShiftRegBase {
+    class ShiftRegisterBase {
     public:
-        ShiftRegBase(pin serial, pin storageCLK, pin shiftCLK);
-        virtual ~ShiftRegBase() = 0;
+        ShiftRegisterBase(pin serial, pin storageCLK, pin shiftCLK);
+        virtual ~ShiftRegisterBase() = 0;
         
         // basic shift register functions
         void setSerial(BIT serialBit) const;
@@ -37,7 +37,7 @@ namespace ShiftReg595 {
         void outputAllOn() const;
         void outputAllOff() const;
 
-    private:
+    protected:
         const pin SER_;
         const pin RCLK_;
         const pin SRCLK_;
