@@ -10,9 +10,9 @@ namespace ShiftReg595 {
     void
     SRClear::clearShiftRegisters(milliseconds period_SRCLK) const {
         // signal is active low
-        pinMode(SRCLR_, 0);
+        digitalWrite(SRCLR_, 0);
         delay(period_SRCLK);
-        pinMode(SRCLR_, 1);
+        digitalWrite(SRCLR_, 1);
         delay(period_SRCLK);
     }
 
