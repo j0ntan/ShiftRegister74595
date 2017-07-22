@@ -3,7 +3,7 @@
 
 #include <utility/ShiftRegisterBase.h>
 
-namespace ShiftReg595 {
+namespace SR595 {
     class OutputEnable {
     public:
         OutputEnable(pin outputEnable);

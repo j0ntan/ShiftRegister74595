@@ -1,7 +1,7 @@
 #include <utility/ShiftRegisterEnable.h>
 #include <Arduino.h>
 
-namespace ShiftReg595 {
+namespace SR595 {
     OutputEnable::OutputEnable(pin outputEnable)
             : OutEn_(outputEnable) {
         pinMode(outputEnable, OUTPUT);

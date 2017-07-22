@@ -1,7 +1,7 @@
 #ifndef SHIFTREGISTERBASE_H
 #define SHIFTREGISTERBASE_H
 
-namespace ShiftReg595 {
+namespace SR595 {
     typedef unsigned char pin;
     typedef unsigned char byte;
     typedef unsigned long milliseconds;

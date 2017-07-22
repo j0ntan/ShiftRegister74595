@@ -3,7 +3,7 @@
 
 #include <utility/ShiftRegisterBase.h>
 
-namespace ShiftReg595 {
+namespace SR595 {
     class SRClear {
     public:
         SRClear(pin shiftRegisterClear);
