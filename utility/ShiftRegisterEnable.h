@@ -21,7 +21,6 @@ namespace ShiftReg595 {
     public:
         ShiftRegisterEnable(pin serial, pin storageCLK,
                 pin shiftCLK, pin outputEnable);
-        virtual ~ShiftRegisterEnable();
 
         void enableOutput() const;
         void disableOutput() const;

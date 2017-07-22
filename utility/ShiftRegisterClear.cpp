@@ -25,7 +25,6 @@ namespace ShiftReg595 {
             ShiftRegisterBase(serial, storageCLK, shiftCLK) {
         outputAllOff();
     }
-    ShiftRegisterClear::~ShiftRegisterClear() {}
 
     void
     ShiftRegisterClear::clearShiftRegisters() const {

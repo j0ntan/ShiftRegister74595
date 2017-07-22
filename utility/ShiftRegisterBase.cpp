@@ -16,7 +16,6 @@ namespace ShiftReg595 {
             SER_(serial), RCLK_(storageCLK), SRCLK_(shiftCLK) {
                 setPinModes(serial, storageCLK, shiftCLK);
     }
-    ShiftRegisterBase::~ShiftRegisterBase(){}
     
     void
     ShiftRegisterBase::setSerial(BIT serialBit) const {

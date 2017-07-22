@@ -12,7 +12,6 @@ namespace ShiftReg595 {
     class ShiftRegisterBase {
     public:
         ShiftRegisterBase(pin serial, pin storageCLK, pin shiftCLK);
-        virtual ~ShiftRegisterBase() = 0;
         
         // basic shift register functions
         void setSerial(BIT serialBit) const;

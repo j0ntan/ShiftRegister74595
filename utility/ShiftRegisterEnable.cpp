@@ -28,7 +28,6 @@ namespace ShiftReg595 {
         outputAllOff();
         enableOutput();
     }
-    ShiftRegisterEnable::~ShiftRegisterEnable() {}
 
     void
     ShiftRegisterEnable::enableOutput() const {
