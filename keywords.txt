@@ -33,6 +33,7 @@ outputAllOff	KEYWORD2
 enableOutput	KEYWORD2
 disableOutput	KEYWORD2
 clearShiftRegisters	KEYWORD2
+updateOutput	KEYWORD2
 
 #######################################
 # Constants (LITERAL1)

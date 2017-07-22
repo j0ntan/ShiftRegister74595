@@ -36,6 +36,9 @@ namespace SR595 {
         void outputAllOn() const;
         void outputAllOff() const;
 
+        // load internal flip-flop values to latch memory
+        void updateOutput() const;
+
     protected:
         const pin SER_;
         const pin RCLK_;

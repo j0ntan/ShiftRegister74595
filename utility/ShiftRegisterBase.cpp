@@ -94,4 +94,9 @@ namespace SR595 {
         shiftAllOff();
         ticRCLK();
     }
+
+    void
+    ShiftRegisterBase::updateOutput() const {
+        ticRCLK();
+    }
 }
