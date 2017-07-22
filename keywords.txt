@@ -1,0 +1,43 @@
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+pin	KEYWORD1
+byte	KEYWORD1
+milliseconds	KEYWORD1
+num	KEYWORD1
+ShiftRegisterBase	KEYWORD1
+ShiftRegisterEnable	KEYWORD1
+ShiftRegisterClear	KEYWORD1
+ShiftRegister	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+setSerial	KEYWORD2
+ticSRCLK	KEYWORD2
+ticRCLK	KEYWORD2
+setPeriodSRCLK	KEYWORD2
+setPeriodRCLK	KEYWORD2
+shiftBit	KEYWORD2
+shiftNBits	KEYWORD2
+shiftByte	KEYWORD2
+shiftAllOn	KEYWORD2
+shiftAllOff	KEYWORD2
+outputBit	KEYWORD2
+outputNBits	KEYWORD2
+outputByte	KEYWORD2
+outputAllOn	KEYWORD2
+outputAllOff	KEYWORD2
+enableOutput	KEYWORD2
+disableOutput	KEYWORD2
+clearShiftRegisters	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+BIT	LITERAL1
+LO	LITERAL1
+HI	LITERAL1
