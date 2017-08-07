@@ -2,7 +2,7 @@
 #include <Arduino.h>
 
 namespace {
-    using ShiftReg595::pin;
+    using SR595::pin;
     void
     setPinModes(const pin& serial, const pin& storageCLK, const pin& shiftCLK) {
         pinMode(serial, OUTPUT);
@@ -11,12 +11,11 @@ namespace {
     }
 }
 
-namespace ShiftReg595 {
+namespace SR595 {
     ShiftRegisterBase::ShiftRegisterBase(pin serial, pin storageCLK, pin shiftCLK) :
             SER_(serial), RCLK_(storageCLK), SRCLK_(shiftCLK) {
                 setPinModes(serial, storageCLK, shiftCLK);
     }
-    ShiftRegisterBase::~ShiftRegisterBase(){}
     
     void
     ShiftRegisterBase::setSerial(BIT serialBit) const {
@@ -93,6 +92,11 @@ namespace ShiftReg595 {
     void
     ShiftRegisterBase::outputAllOff() const {
         shiftAllOff();
+        ticRCLK();
+    }
+
+    void
+    ShiftRegisterBase::updateOutput() const {
         ticRCLK();
     }
 }

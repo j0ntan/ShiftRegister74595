@@ -5,12 +5,11 @@
 #include <utility/ShiftRegisterEnable.h>
 #include <utility/ShiftRegisterClear.h>
 
-namespace ShiftReg595 {
+namespace SR595 {
     class ShiftRegister : public ShiftRegisterBase{
     public:
         ShiftRegister(pin serial, pin storageCLK,
                 pin shiftCLK, pin outputEnable, pin serialClear);
-        virtual ~ShiftRegister();
 
         void enableOutput() const;
         void disableOutput() const;

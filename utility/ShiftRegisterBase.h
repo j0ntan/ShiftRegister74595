@@ -1,7 +1,7 @@
 #ifndef SHIFTREGISTERBASE_H
 #define SHIFTREGISTERBASE_H
 
-namespace ShiftReg595 {
+namespace SR595 {
     typedef unsigned char pin;
     typedef unsigned char byte;
     typedef unsigned long milliseconds;
@@ -12,7 +12,6 @@ namespace ShiftReg595 {
     class ShiftRegisterBase {
     public:
         ShiftRegisterBase(pin serial, pin storageCLK, pin shiftCLK);
-        virtual ~ShiftRegisterBase() = 0;
         
         // basic shift register functions
         void setSerial(BIT serialBit) const;
@@ -36,6 +35,9 @@ namespace ShiftReg595 {
         void outputByte(byte b) const;
         void outputAllOn() const;
         void outputAllOff() const;
+
+        // load internal flip-flop values to latch memory
+        void updateOutput() const;
 
     protected:
         const pin SER_;

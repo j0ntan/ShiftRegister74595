@@ -2,7 +2,7 @@
 #include <Arduino.h>
 
 namespace {
-    using ShiftReg595::pin;
+    using SR595::pin;
     void
     setPinModes(const pin& serial, const pin& shiftCLK,
             const pin& storageCLK, const pin& outEn, const pin& shiftClear) {
@@ -14,7 +14,7 @@ namespace {
     }
 }
 
-namespace ShiftReg595 {
+namespace SR595 {
     ShiftRegister::ShiftRegister(pin serial, pin storageCLK,
             pin shiftCLK, pin outputEnable, pin serialClear)  : 
             OutEn_(outputEnable), SRCLR_(serialClear),
@@ -23,7 +23,6 @@ namespace ShiftReg595 {
         outputAllOff();
         enableOutput();
     }
-    ShiftRegister::~ShiftRegister() {}
 
     void
     ShiftRegister::enableOutput() const {

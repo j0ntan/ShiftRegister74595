@@ -1,7 +1,7 @@
 #include <utility/ShiftRegisterClear.h>
 #include <Arduino.h>
 
-namespace ShiftReg595 {
+namespace SR595 {
     SRClear::SRClear(pin shiftRegisterClear) 
             : SRCLR_(shiftRegisterClear) {
         pinMode(shiftRegisterClear, OUTPUT);
@@ -25,7 +25,6 @@ namespace ShiftReg595 {
             ShiftRegisterBase(serial, storageCLK, shiftCLK) {
         outputAllOff();
     }
-    ShiftRegisterClear::~ShiftRegisterClear() {}
 
     void
     ShiftRegisterClear::clearShiftRegisters() const {
